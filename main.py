@@ -43,6 +43,10 @@ def main():
             if thing.collision(player1):
                 print("Game Over!")
                 sys.exit()
+            for shot in shots:
+                if thing.collision(shot):
+                    thing.kill()
+                    shot.kill()
         for thing in drawable:
             thing.draw(screen)
 
